@@ -110,10 +110,10 @@ export default function Home() {
             />
 <StarBorder color="hsl(208, 55.60%, 5.30%)" speed="4s">
   <div
-    onClick={() => router.push("/roadmaps")}
+    onClick={() => router.push("/books")}
     className="cursor-pointer text-white font-bold px-6 py-3 bg-black-500 rounded-lg shadow-md hover:bg-blue-600"
   >
-    Explore our Roadmaps
+    Explore our CoreSubjects
   </div>
 </StarBorder>
 
