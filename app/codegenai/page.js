@@ -72,7 +72,8 @@ Problem Statement: ${problemStatement}
 4. Edge Cases:
    - Mention edge cases
 
-Also suggest helpful articles or YouTube links.`;
+Respond in a clear and structured format. Use code blocks (\`\`\`${language} ... \`\`\`) for code implementations, matching the selected language. If a code implementation is not possible, clearly explain the approach. Ensure the code is directly copyable. Return code in separate code blocks from explanations.
+Also suggest articles link or youtube link related to problem.Dont ask me to search u search and directly give me link.`;
 };
 
 export default function CodeGenAI() {
