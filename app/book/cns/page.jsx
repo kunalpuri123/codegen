@@ -12,7 +12,7 @@ import { IoMdFolderOpen } from "react-icons/io";
 
 const BookViewer = () => {
   const [selectedChapter, setSelectedChapter] = useState(
-    "https://online.flippingbook.com/view/297538379/"
+    "https://online.flippingbook.com/view/219220446/"
   );
   const [completedChapters, setCompletedChapters] = useState([]);
   const { user } = useUser(); // Access current user
@@ -23,16 +23,16 @@ const BookViewer = () => {
       id: "folder1",
       title: "Introduction", // Added title for the folder
       subchapters: [
-        { id: "chapter1", name: "Chapter 1: Overview", file: "https://online.flippingbook.com/view/297538379/" },
-        { id: "chapter2", name: "Chapter 2: Details", file: "https://drive.google.com/file/d/FILE_ID2/preview" }
+        { id: "chapter1", name: "Chapter 1: Overview", file: "https://online.flippingbook.com/view/219220446/" },
+        { id: "chapter2", name: "Chapter 2: Details", file: "https://online.flippingbook.com/view/219220446/" }
       ],
     },
     {
       id: "folder2",
       title: "Advanced Topics", // Added title for the folder
       subchapters: [
-        { id: "chapter3", name: "Chapter 3: Methods", file: "https://drive.google.com/file/d/FILE_ID3/preview" },
-        { id: "chapter4", name: "Chapter 4: Applications", file: "https://drive.google.com/file/d/FILE_ID4/preview" }
+        { id: "chapter3", name: "Chapter 3: Methods", file: "https://online.flippingbook.com/view/219220446/" },
+        { id: "chapter4", name: "Chapter 4: Applications", file: "https://online.flippingbook.com/view/219220446/" }
       ],
     },
   ];
