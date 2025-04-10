@@ -13,7 +13,7 @@ import { AnimatedText } from "../_components/AnimatedText";
 
 const BookViewer = () => {
   const [selectedChapter, setSelectedChapter] = useState(
-    "https://online.flippingbook.com/view/447058307/"
+    "https://online.flippingbook.com/view/219220446/"
   );
   const [completedChapters, setCompletedChapters] = useState([]);
   const { user } = useUser(); // Access current user
@@ -24,10 +24,10 @@ const BookViewer = () => {
       "id": "folder1",
       "title": "Introduction to Computer Networks",
       "subchapters": [
-        { "id": "chapter1_1", "name": "Operating System Introduction", "file": "https://online.flippingbook.com/view/447058307/" },
-        { "id": "chapter1_2", "name": "Multiprocessing Operating System", "file": "https://online.flippingbook.com/view/446911538/" },
-        { "id": "chapter1_3", "name": "Distributed Operating System", "file": "https://online.flippingbook.com/view/446911538/" },
-        { "id": "chapter1_4", "name": "Batch Operating System", "file": "https://online.flippingbook.com/view/446911538/" }
+        { "id": "chapter1_1", "name": "Operating System Introduction", "file": "https://online.flippingbook.com/view/219220446/" },
+        { "id": "chapter1_2", "name": "Multiprocessing Operating System", "file": "https://online.flippingbook.com/view/219220446/" },
+        { "id": "chapter1_3", "name": "Distributed Operating System", "file": "https://online.flippingbook.com/view/219220446/" },
+        { "id": "chapter1_4", "name": "Batch Operating System", "file": "https://online.flippingbook.com/view/219220446/" }
       ]
     },
     {
