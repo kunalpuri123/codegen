@@ -80,24 +80,15 @@ export default function FaqPage() {
           ))}
         </div>
 
-        <div className="mx-auto flex max-w-4xl flex-col items-center rounded-lg bg-gray-800 p-4 text-center md:rounded-xl md:p-6 lg:p-8">
-          {/* Avatar group */}
-          <div className="relative mb-8 flex items-center justify-center">
-            <div className="relative flex">
-              <Avatar className="z-10 size-20 border-2 border-white shadow-md">
-                <AvatarImage src="https://shadcnblocks.com/images/block/avatar-1.webp" />
-                <AvatarFallback>AI</AvatarFallback>
-              </Avatar>
-              <Avatar className="absolute left-[-35px] top-3 size-14 border-2 border-white shadow-md">
-                <AvatarImage src="https://shadcnblocks.com/images/block/avatar-2.webp" />
-                <AvatarFallback>ST</AvatarFallback>
-              </Avatar>
-              <Avatar className="absolute right-[-35px] top-3 size-14 border-2 border-white shadow-md">
-                <AvatarImage src="https://shadcnblocks.com/images/block/avatar-3.webp" />
-                <AvatarFallback>SU</AvatarFallback>
-              </Avatar>
-            </div>
+       <div className="mx-auto flex max-w-4xl flex-col items-center rounded-lg bg-gray-800 p-4 text-center md:rounded-xl md:p-6 lg:p-8">
+          {/* Single Centered Avatar */}
+          <div className="mb-6 flex justify-center">
+            <Avatar className="size-24 border-2 border-white shadow-lg">
+              <AvatarImage src="https://shadcnblocks.com/images/block/avatar-1.webp" />
+              <AvatarFallback>AI</AvatarFallback>
+            </Avatar>
           </div>
+
 
           <h3 className="mb-2 max-w-3xl font-semibold lg:text-lg">
             Still have questions?
