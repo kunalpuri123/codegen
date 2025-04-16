@@ -247,7 +247,7 @@ const folders = [
         </p>
       </div>
 
-      {/* Progress Bar and Percentage */}
+           {/* Progress Bar and Percentage */}
       <div className="w-full h-2 bg-gray-600 mt-4">
         <div
           className="h-full bg-gradient-to-r from-green-400 to-blue-500 transition-all duration-300 ease-in-out"
@@ -340,5 +340,3 @@ const folders = [
     </div>
   );
 };
-
-export default BookViewer;
