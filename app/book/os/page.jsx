@@ -13,7 +13,7 @@ import { IoMdFolderOpen } from "react-icons/io";
 const BookViewer = () => {
   const [selectedChapter, setSelectedChapter] = useState(
     "https://online.flippingbook.com/view/219220446/"
-    "https://online.flippingbook.com/view/219220446/"
+  
   );
   const [completedChapters, setCompletedChapters] = useState([]);
   const { user } = useUser(); // Access current user
