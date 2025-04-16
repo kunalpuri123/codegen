@@ -245,9 +245,10 @@ const folders = [
         <p className="mt-4 text-xl text-gray-300">
            For a technical interview in operating systems, it's essential to understand core concepts like process management, memory management, file systems, synchronization, and deadlock handling. Familiarity with types of operating systems such as batch, distributed, and multiprocessing systems is also beneficial.
         </p>
+        
       </div>
 
-           {/* Progress Bar and Percentage */}
+      {/* Progress Bar and Percentage */}
       <div className="w-full h-2 bg-gray-600 mt-4">
         <div
           className="h-full bg-gradient-to-r from-green-400 to-blue-500 transition-all duration-300 ease-in-out"
@@ -340,3 +341,5 @@ const folders = [
     </div>
   );
 };
+
+export default BookViewer;
