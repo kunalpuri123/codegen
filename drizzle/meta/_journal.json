@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1737901308941,
+      "tag": "0000_unique_malcolm_colcord",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1738012225738,
+      "tag": "0001_medical_sharon_carter",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1738828568248,
+      "tag": "0002_brave_leopardon",
+      "breakpoints": true
+    }
+  ]
+}
