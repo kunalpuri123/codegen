@@ -12,31 +12,116 @@ import { IoMdFolderOpen } from "react-icons/io";
 
 const BookViewer = () => {
   const [selectedChapter, setSelectedChapter] = useState(
-    "https://online.flippingbook.com/view/219220446/"
+    "https://online.flippingbook.com/view/52159364/"
   
   );
   const [completedChapters, setCompletedChapters] = useState([]);
   const { user } = useUser(); // Access current user
   const [openFolders, setOpenFolders] = useState({}); // To track open/closed folders
 
-  const folders = [
-    {
-      id: "folder1",
-      title: "Introduction", // Added title for the folder
-      subchapters: [
-        { id: "chapter1", name: "Chapter 1: Overview", file: "https://online.flippingbook.com/view/219220446/" },
-        { id: "chapter2", name: "Chapter 2: Details", file: "https://online.flippingbook.com/view/219220446/" }
-      ],
-    },
-    {
-      id: "folder2",
-      title: "Advanced Topics", // Added title for the folder
-      subchapters: [
-        { id: "chapter3", name: "Chapter 3: Methods", file: "https://online.flippingbook.com/view/219220446/" },
-        { id: "chapter4", name: "Chapter 4: Applications", file: "https://online.flippingbook.com/view/219220446/" }
-      ],
-    },
-  ];
+const folders = [
+  {
+    "id": "folder1",
+    "title": "Operating System Overview",
+    "subchapters": [
+      { "id": "chapter1_1", "name": "Operating System Introduction", "file": "https://online.flippingbook.com/view/52159364/" },
+      { "id": "chapter1_2", "name": "Multiprocessing Operating System", "file": "https://online.flippingbook.com/view/51954508/" },
+      { "id": "chapter1_3", "name": "Distributed Operating System", "file": "https://online.flippingbook.com/view/51844281/" },
+      { "id": "chapter1_4", "name": "Batch Operating System", "file": "https://online.flippingbook.com/view/51676253/" }
+    ]
+  },
+  {
+    "id": "folder2",
+    "title": "OS Architecture and Components",
+    "subchapters": [
+      { "id": "chapter2_1", "name": "Operating System Introduction", "file": "https://online.flippingbook.com/view/52159364/" },
+      { "id": "chapter2_2", "name": "Multiprocessing Operating System", "file": "https://online.flippingbook.com/view/51954508/" },
+      { "id": "chapter2_3", "name": "Distributed Operating System", "file": "https://online.flippingbook.com/view/51844281/" },
+      { "id": "chapter2_4", "name": "Batch Operating System", "file": "https://online.flippingbook.com/view/51676253/" }
+    ]
+  },
+  {
+    "id": "folder3",
+    "title": "Memory Management in OS",
+    "subchapters": [
+      { "id": "chapter3_1", "name": "Operating System Introduction", "file": "https://online.flippingbook.com/view/52159364/" },
+      { "id": "chapter3_2", "name": "Multiprocessing Operating System", "file": "https://online.flippingbook.com/view/51954508/" },
+      { "id": "chapter3_3", "name": "Distributed Operating System", "file": "https://online.flippingbook.com/view/51844281/" },
+      { "id": "chapter3_4", "name": "Batch Operating System", "file": "https://online.flippingbook.com/view/51676253/" }
+    ]
+  },
+  {
+    "id": "folder4",
+    "title": "Process and Thread Management",
+    "subchapters": [
+      { "id": "chapter4_1", "name": "Operating System Introduction", "file": "https://online.flippingbook.com/view/52159364/" },
+      { "id": "chapter4_2", "name": "Multiprocessing Operating System", "file": "https://online.flippingbook.com/view/51954508/" },
+      { "id": "chapter4_3", "name": "Distributed Operating System", "file": "https://online.flippingbook.com/view/51844281/" },
+      { "id": "chapter4_4", "name": "Batch Operating System", "file": "https://online.flippingbook.com/view/51676253/" }
+    ]
+  },
+  {
+    "id": "folder5",
+    "title": "Scheduling and Synchronization",
+    "subchapters": [
+      { "id": "chapter5_1", "name": "Operating System Introduction", "file": "https://online.flippingbook.com/view/52159364/" },
+      { "id": "chapter5_2", "name": "Multiprocessing Operating System", "file": "https://online.flippingbook.com/view/51954508/" },
+      { "id": "chapter5_3", "name": "Distributed Operating System", "file": "https://online.flippingbook.com/view/51844281/" },
+      { "id": "chapter5_4", "name": "Batch Operating System", "file": "https://online.flippingbook.com/view/51676253/" }
+    ]
+  },
+  {
+    "id": "folder6",
+    "title": "File Systems and Storage Management",
+    "subchapters": [
+      { "id": "chapter6_1", "name": "Operating System Introduction", "file": "https://online.flippingbook.com/view/52159364/" },
+      { "id": "chapter6_2", "name": "Multiprocessing Operating System", "file": "https://online.flippingbook.com/view/51954508/" },
+      { "id": "chapter6_3", "name": "Distributed Operating System", "file": "https://online.flippingbook.com/view/51844281/" },
+      { "id": "chapter6_4", "name": "Batch Operating System", "file": "https://online.flippingbook.com/view/51676253/" }
+    ]
+  },
+  {
+    "id": "folder7",
+    "title": "Security and Protection in OS",
+    "subchapters": [
+      { "id": "chapter7_1", "name": "Operating System Introduction", "file": "https://online.flippingbook.com/view/52159364/" },
+      { "id": "chapter7_2", "name": "Multiprocessing Operating System", "file": "https://online.flippingbook.com/view/51954508/" },
+      { "id": "chapter7_3", "name": "Distributed Operating System", "file": "https://online.flippingbook.com/view/51844281/" },
+      { "id": "chapter7_4", "name": "Batch Operating System", "file": "https://online.flippingbook.com/view/51676253/" }
+    ]
+  },
+  {
+    "id": "folder8",
+    "title": "Real-Time and Embedded OS",
+    "subchapters": [
+      { "id": "chapter8_1", "name": "Operating System Introduction", "file": "https://online.flippingbook.com/view/52159364/" },
+      { "id": "chapter8_2", "name": "Multiprocessing Operating System", "file": "https://online.flippingbook.com/view/51954508/" },
+      { "id": "chapter8_3", "name": "Distributed Operating System", "file": "https://online.flippingbook.com/view/51844281/" },
+      { "id": "chapter8_4", "name": "Batch Operating System", "file": "https://online.flippingbook.com/view/51676253/" }
+    ]
+  },
+  {
+    "id": "folder9",
+    "title": "Virtualization and Cloud OS",
+    "subchapters": [
+      { "id": "chapter9_1", "name": "Operating System Introduction", "file": "https://online.flippingbook.com/view/52159364/" },
+      { "id": "chapter9_2", "name": "Multiprocessing Operating System", "file": "https://online.flippingbook.com/view/51954508/" },
+      { "id": "chapter9_3", "name": "Distributed Operating System", "file": "https://online.flippingbook.com/view/51844281/" },
+      { "id": "chapter9_4", "name": "Batch Operating System", "file": "https://online.flippingbook.com/view/51676253/" }
+    ]
+  },
+  {
+    "id": "folder10",
+    "title": "Advanced OS Topics",
+    "subchapters": [
+      { "id": "chapter10_1", "name": "Operating System Introduction", "file": "https://online.flippingbook.com/view/52159364/" },
+      { "id": "chapter10_2", "name": "Multiprocessing Operating System", "file": "https://online.flippingbook.com/view/51954508/" },
+      { "id": "chapter10_3", "name": "Distributed Operating System", "file": "https://online.flippingbook.com/view/51844281/" },
+      { "id": "chapter10_4", "name": "Batch Operating System", "file": "https://online.flippingbook.com/view/51676253/" }
+    ]
+  }
+];
+
 
   useEffect(() => {
     const fetchProgress = async () => {
