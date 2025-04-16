@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar";
 import { Button } from "@/components/ui/button";
 
@@ -50,13 +49,13 @@ export default function FaqPage() {
   };
 
   return (
-    <section className="py-32 bg-white text-black dark:bg-background dark:text-white">
+    <section className="py-32 bg-black text-white">
       <div className="container space-y-16">
         <div className="mx-auto flex max-w-3xl flex-col text-left md:text-center">
           <h2 className="mb-3 text-3xl font-semibold md:mb-4 lg:mb-6 lg:text-4xl">
             Frequently Asked Questions
           </h2>
-          <p className="text-muted-foreground lg:text-lg">
+          <p className="text-gray-400 lg:text-lg">
             Learn more about how Codegen AI+ works and how it can level up your interview preparation journey.
           </p>
         </div>
@@ -65,47 +64,50 @@ export default function FaqPage() {
           {faqItems.map((item, index) => (
             <div
               key={index}
-              className="border border-border rounded-lg p-4 transition-all duration-300"
+              className="border border-gray-700 rounded-lg p-4 transition-all duration-300 bg-gray-900"
             >
               <button
-                className="flex justify-between items-center w-full font-medium text-left text-lg"
+                className="flex justify-between items-center w-full font-medium text-left text-lg text-white"
                 onClick={() => toggleAccordion(index)}
               >
                 {item.question}
-                <span>{activeIndex === index ? "−" : "+"}</span>
+                <span className="text-xl">{activeIndex === index ? "−" : "+"}</span>
               </button>
               {activeIndex === index && (
-                <div className="mt-2 text-muted-foreground">{item.answer}</div>
+                <div className="mt-2 text-gray-400">{item.answer}</div>
               )}
             </div>
           ))}
         </div>
 
-        <div className="mx-auto flex max-w-4xl flex-col items-center rounded-lg bg-accent p-4 text-center md:rounded-xl md:p-6 lg:p-8">
-          <div className="relative mb-8 flex items-end justify-center">
-            <Avatar className="z-10 mb-4 size-20 border-2 border-white shadow-md md:mb-5">
-              <AvatarImage src="https://shadcnblocks.com/images/block/avatar-1.webp" />
-              <AvatarFallback>AI</AvatarFallback>
-            </Avatar>
-            <Avatar className="absolute left-1/2 -translate-x-[110%] mb-2 size-14 border shadow-md scale-[90%]">
-              <AvatarImage src="https://shadcnblocks.com/images/block/avatar-2.webp" />
-              <AvatarFallback>ST</AvatarFallback>
-            </Avatar>
-            <Avatar className="absolute left-1/2 translate-x-[110%] mb-2 size-14 border shadow-md scale-[90%]">
-              <AvatarImage src="https://shadcnblocks.com/images/block/avatar-3.webp" />
-              <AvatarFallback>SU</AvatarFallback>
-            </Avatar>
+        <div className="mx-auto flex max-w-4xl flex-col items-center rounded-lg bg-gray-800 p-4 text-center md:rounded-xl md:p-6 lg:p-8">
+          {/* Avatar group */}
+          <div className="relative mb-8 flex items-center justify-center">
+            <div className="relative flex">
+              <Avatar className="z-10 size-20 border-2 border-white shadow-md">
+                <AvatarImage src="https://shadcnblocks.com/images/block/avatar-1.webp" />
+                <AvatarFallback>AI</AvatarFallback>
+              </Avatar>
+              <Avatar className="absolute left-[-35px] top-3 size-14 border-2 border-white shadow-md">
+                <AvatarImage src="https://shadcnblocks.com/images/block/avatar-2.webp" />
+                <AvatarFallback>ST</AvatarFallback>
+              </Avatar>
+              <Avatar className="absolute right-[-35px] top-3 size-14 border-2 border-white shadow-md">
+                <AvatarImage src="https://shadcnblocks.com/images/block/avatar-3.webp" />
+                <AvatarFallback>SU</AvatarFallback>
+              </Avatar>
+            </div>
           </div>
 
           <h3 className="mb-2 max-w-3xl font-semibold lg:text-lg">
             Still have questions?
           </h3>
-          <p className="mb-8 max-w-3xl text-muted-foreground lg:text-lg">
+          <p className="mb-8 max-w-3xl text-gray-400 lg:text-lg">
             Can’t find the answer you’re looking for? Our support team is here to help on WhatsApp.
           </p>
 
           <div className="flex w-full flex-col justify-center gap-2 sm:flex-row">
-            <Button className="w-full sm:w-auto" asChild>
+            <Button className="w-full sm:w-auto bg-green-600 hover:bg-green-700" asChild>
               <a
                 href="https://wa.me/919284690148"
                 target="_blank"
