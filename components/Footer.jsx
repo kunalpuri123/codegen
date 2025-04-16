@@ -26,27 +26,29 @@ function Footer() {
           </ul>
         </div>
         <div className="border-t border-gray-700 mt-6 pt-6 md:mt-4 md:pt-8 lg:grid lg:grid-cols-10">
-          <nav className="lg:col-[4/11]">
-            <ul className="list-none flex flex-wrap -my-1 -mx-2 lg:justify-end">
-              {["Products", "About", "Blog", "Contact"].map((item, i) => (
-                <li key={i} className="my-1 mx-2 shrink-0">
-                  <a href={`/${item.toLowerCase()}`} className="text-sm text-gray-400 hover:text-white underline-offset-4 hover:underline">
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
+<nav className="lg:col-[4/11]">
+  <ul className="list-none flex flex-wrap -my-1 -mx-2 lg:justify-end">
+    <li className="my-1 mx-2 shrink-0">
+      <a
+        href="/aboutus"
+        className="text-sm text-gray-400 hover:text-white underline-offset-4 hover:underline"
+      >
+        About
+      </a>
+    </li>
+    <li className="my-1 mx-2 shrink-0">
+      <a
+        href="/contactus"
+        className="text-sm text-gray-400 hover:text-white underline-offset-4 hover:underline"
+      >
+        Contact
+      </a>
+    </li>
+  </ul>
+</nav>
+
           <div className="mt-6 lg:mt-0 lg:col-[4/11]">
-            <ul className="list-none flex flex-wrap -my-1 -mx-3 lg:justify-end">
-              {["Privacy", "Terms"].map((item, i) => (
-                <li key={i} className="my-1 mx-3 shrink-0">
-                  <a href={`/${item.toLowerCase()}`} className="text-sm text-gray-500 hover:text-white underline-offset-4 hover:underline">
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          <p>Have Fun With AI!</p>
           </div>
           <div className="mt-6 text-sm leading-6 text-gray-500 lg:mt-0 lg:row-[1/3] lg:col-[1/4]">
             <div>© 2025 CodeGenAI</div>
