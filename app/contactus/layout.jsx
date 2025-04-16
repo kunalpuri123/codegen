@@ -1,13 +1,5 @@
 import React from "react";
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-import { Header } from "./_components/Header";
-=======
-
->>>>>>> d70efed (about)
->>>>>>> 3689396
 import Navbar from "@/components/ui/Navbar";
 
 function RoadmapLayout({ children }) {
