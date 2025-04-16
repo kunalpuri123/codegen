@@ -235,17 +235,17 @@ const folders = [
   const isFolderCompleted = (folder) => {
     return folder.subchapters.every(subchapter => completedChapters.includes(subchapter.id));
   };
-
   return (
-<div className="bg-gray-800 text-center p-8 shadow-lg z-10 relative">
-  <AnimatedText 
-    text="Operating System" 
-    textClassName="text-[4rem] md:text-[6rem] font-bold"
-  />
-  <p className="mt-4 text-xl text-gray-300">
-    For a technical interview in operating systems, it's essential to understand core concepts like process management, memory management, file systems, synchronization, and deadlock handling. Familiarity with types of operating systems such as batch, distributed, and multiprocessing systems is also beneficial.
-  </p>
-</div>
+    <div className="flex flex-col h-screen bg-gray-900 text-white">
+      {/* Title and Description */}
+      <div className="bg-gray-800 text-center p-8 shadow-lg z-10 relative">
+        <h1 className="text-4xl font-extrabold text-gray-100">
+          Operating System
+        </h1>
+        <p className="mt-4 text-xl text-gray-300">
+           For a technical interview in operating systems, it's essential to understand core concepts like process management, memory management, file systems, synchronization, and deadlock handling. Familiarity with types of operating systems such as batch, distributed, and multiprocessing systems is also beneficial.
+        </p>
+      </div>
 
       {/* Progress Bar and Percentage */}
       <div className="w-full h-2 bg-gray-600 mt-4">
