@@ -48,7 +48,7 @@ function Footer() {
 </nav>
 
           <div className="mt-6 lg:mt-0 lg:col-[4/11]">
-          <p>Have Fun With AI!</p>
+       
           </div>
           <div className="mt-6 text-sm leading-6 text-gray-500 lg:mt-0 lg:row-[1/3] lg:col-[1/4]">
             <div>© 2025 CodeGenAI</div>
