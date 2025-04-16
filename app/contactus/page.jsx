@@ -1,14 +1,8 @@
 "use client";
 import { useState } from "react";
-<<<<<<< HEAD
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar";
-=======
-<<<<<<< HEAD
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-=======
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar";
->>>>>>> d70efed (about)
->>>>>>> 3689396
+
 import { Button } from "@/components/ui/button";
 
 const faqItems = [
