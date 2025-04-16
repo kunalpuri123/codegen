@@ -2,43 +2,43 @@
 import { useState } from "react";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar";
-
 import { Button } from "@/components/ui/button";
 
 const faqItems = [
   {
-    question: "What is the return policy?",
+    question: "What is Codegen AI+?",
     answer:
-      "You can return any item within 30 days of purchase for a full refund, provided it is in its original condition.",
+      "Codegen AI+ is an all-in-one AI interview prep platform offering voice-based mock interviews, live feedback, and smart coding assistance.",
   },
   {
-    question: "How do I track my order?",
+    question: "How does real-time analysis work?",
     answer:
-      "Once your order is shipped, you will receive an email with a tracking number. You can use this number on our website to track your order.",
+      "During mock interviews, your audio and webcam are analyzed to evaluate fluency, posture, confidence, and grammar in real time.",
   },
   {
-    question: "Do you offer international shipping?",
+    question: "Can I generate coding solutions using Codegen AI+?",
     answer:
-      "Yes, we ship to most countries worldwide. Shipping costs and delivery times vary depending on the destination.",
+      "Yes! Enter any coding problem and Codegen AI+ will provide brute force, better, and optimal solutions with clear explanations and visual guides.",
   },
   {
-    question: "Can I change my order after it has been placed?",
+    question: "What topics are covered in the learning roadmap?",
     answer:
-      "You can change your order within 24 hours of placing it by contacting our customer service team.",
+      "We offer structured learning for DSA, OS, DBMS, CN, and System Design with curated notes, visuals, and MCQs.",
   },
   {
-    question: "What payment methods do you accept?",
-    answer: "We accept all major credit cards, PayPal, and Apple Pay.",
+    question: "Can I receive follow-up questions during interviews?",
+    answer:
+      "Yes, our AI simulates real interviews by asking smart counter-questions based on your responses.",
   },
   {
-    question: "How can I contact customer support?",
+    question: "Is this suitable for freshers?",
     answer:
-      "You can reach our customer support team via email at support@example.com or by calling 1-800-123-4567.",
+      "Absolutely! Whether you're preparing for your first job or upskilling, Codegen AI+ adapts to your level.",
   },
   {
-    question: "Are there any discounts for bulk purchases?",
+    question: "How do I get support or report a bug?",
     answer:
-      "Yes, we offer discounts for bulk purchases. Please contact our sales team for more information.",
+      "You can contact us directly on WhatsApp using the button below or reach out via email.",
   },
 ];
 
@@ -50,14 +50,14 @@ export default function FaqPage() {
   };
 
   return (
-    <section className="py-32">
+    <section className="py-32 bg-white text-black dark:bg-background dark:text-white">
       <div className="container space-y-16">
         <div className="mx-auto flex max-w-3xl flex-col text-left md:text-center">
           <h2 className="mb-3 text-3xl font-semibold md:mb-4 lg:mb-6 lg:text-4xl">
-            Frequently asked questions
+            Frequently Asked Questions
           </h2>
           <p className="text-muted-foreground lg:text-lg">
-            Find answers to common questions about our products. Can't find what you're looking for? Contact our support team.
+            Learn more about how Codegen AI+ works and how it can level up your interview preparation journey.
           </p>
         </div>
 
@@ -82,30 +82,36 @@ export default function FaqPage() {
         </div>
 
         <div className="mx-auto flex max-w-4xl flex-col items-center rounded-lg bg-accent p-4 text-center md:rounded-xl md:p-6 lg:p-8">
-          <div className="relative mb-6 flex justify-center gap-4">
-            <Avatar className="absolute mb-4 size-16 origin-bottom -translate-x-[60%] scale-[80%] border md:mb-5">
-              <AvatarImage src="https://shadcnblocks.com/images/block/avatar-2.webp" />
-              <AvatarFallback>SU</AvatarFallback>
+          <div className="relative mb-8 flex items-end justify-center">
+            <Avatar className="z-10 mb-4 size-20 border-2 border-white shadow-md md:mb-5">
+              <AvatarImage src="https://shadcnblocks.com/images/block/avatar-1.webp" />
+              <AvatarFallback>AI</AvatarFallback>
             </Avatar>
-            <Avatar className="absolute mb-4 size-16 origin-bottom translate-x-[60%] scale-[80%] border md:mb-5">
+            <Avatar className="absolute left-1/2 -translate-x-[110%] mb-2 size-14 border shadow-md scale-[90%]">
+              <AvatarImage src="https://shadcnblocks.com/images/block/avatar-2.webp" />
+              <AvatarFallback>ST</AvatarFallback>
+            </Avatar>
+            <Avatar className="absolute left-1/2 translate-x-[110%] mb-2 size-14 border shadow-md scale-[90%]">
               <AvatarImage src="https://shadcnblocks.com/images/block/avatar-3.webp" />
               <AvatarFallback>SU</AvatarFallback>
             </Avatar>
-            <Avatar className="mb-4 size-16 border md:mb-5">
-              <AvatarImage src="https://shadcnblocks.com/images/block/avatar-1.webp" />
-              <AvatarFallback>SU</AvatarFallback>
-            </Avatar>
           </div>
+
           <h3 className="mb-2 max-w-3xl font-semibold lg:text-lg">
             Still have questions?
           </h3>
           <p className="mb-8 max-w-3xl text-muted-foreground lg:text-lg">
-            Can't find the answer you're looking for? Our support team is here to help with any technical questions or concerns.
+            Can’t find the answer you’re looking for? Our support team is here to help on WhatsApp.
           </p>
+
           <div className="flex w-full flex-col justify-center gap-2 sm:flex-row">
             <Button className="w-full sm:w-auto" asChild>
-              <a href="https://www.shadcnblocks.com" target="_blank">
-                Contact Support
+              <a
+                href="https://wa.me/919284690148"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Message on WhatsApp
               </a>
             </Button>
           </div>
