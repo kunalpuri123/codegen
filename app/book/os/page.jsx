@@ -9,118 +9,129 @@ import { FaFolderClosed, FaFolderOpen } from "react-icons/fa"; // Folder icons
 import { MdOutlineDoneOutline } from "react-icons/md"; // Icon for completed folder
 import { FaRegFolderOpen } from "react-icons/fa";
 import { IoMdFolderOpen } from "react-icons/io";
+import { AnimatedText } from "../_components/AnimatedText";
 
 const BookViewer = () => {
   const [selectedChapter, setSelectedChapter] = useState(
-    "https://online.flippingbook.com/view/52159364/"
-  
+    "https://online.flippingbook.com/view/786383985/",
   );
   const [completedChapters, setCompletedChapters] = useState([]);
   const { user } = useUser(); // Access current user
   const [openFolders, setOpenFolders] = useState({}); // To track open/closed folders
 
+const newLinks = [
+  "https://online.flippingbook.com/view/786383985/",
+  "https://online.flippingbook.com/view/785483713/",
+  "https://online.flippingbook.com/view/786151758/",
+  "https://online.flippingbook.com/view/786295002/",
+];
+
+let linkIndex = 0;
+
 const folders = [
   {
-    "id": "folder1",
-    "title": "Operating System Overview",
-    "subchapters": [
-      { "id": "chapter1_1", "name": "Operating System Introduction", "file": "https://online.flippingbook.com/view/52159364/" },
-      { "id": "chapter1_2", "name": "Multiprocessing Operating System", "file": "https://online.flippingbook.com/view/51954508/" },
-      { "id": "chapter1_3", "name": "Distributed Operating System", "file": "https://online.flippingbook.com/view/51844281/" },
-      { "id": "chapter1_4", "name": "Batch Operating System", "file": "https://online.flippingbook.com/view/51676253/" }
-    ]
+    id: "folder1",
+    title: "Introduction to Computer Networks",
+    subchapters: [
+      { id: "chapter1_1", name: "Operating System Introduction", file: newLinks[linkIndex++ % 4] },
+      { id: "chapter1_2", name: "Multiprocessing Operating System", file: newLinks[linkIndex++ % 4] },
+      { id: "chapter1_3", name: "Distributed Operating System", file: newLinks[linkIndex++ % 4] },
+      { id: "chapter1_4", name: "Batch Operating System", file: newLinks[linkIndex++ % 4] },
+    ],
   },
   {
-    "id": "folder2",
-    "title": "OS Architecture and Components",
-    "subchapters": [
-      { "id": "chapter2_1", "name": "Operating System Introduction", "file": "https://online.flippingbook.com/view/52159364/" },
-      { "id": "chapter2_2", "name": "Multiprocessing Operating System", "file": "https://online.flippingbook.com/view/51954508/" },
-      { "id": "chapter2_3", "name": "Distributed Operating System", "file": "https://online.flippingbook.com/view/51844281/" },
-      { "id": "chapter2_4", "name": "Batch Operating System", "file": "https://online.flippingbook.com/view/51676253/" }
-    ]
+    id: "folder2",
+    title: "Networking Models",
+    subchapters: [
+      { id: "chapter2_1", name: "Operating System Introduction", file: newLinks[linkIndex++ % 4] },
+      { id: "chapter2_2", name: "Multiprocessing Operating System", file: newLinks[linkIndex++ % 4] },
+      { id: "chapter2_3", name: "Distributed Operating System", file: newLinks[linkIndex++ % 4] },
+      { id: "chapter2_4", name: "Batch Operating System", file: newLinks[linkIndex++ % 4] },
+    ],
   },
   {
-    "id": "folder3",
-    "title": "Memory Management in OS",
-    "subchapters": [
-      { "id": "chapter3_1", "name": "Operating System Introduction", "file": "https://online.flippingbook.com/view/52159364/" },
-      { "id": "chapter3_2", "name": "Multiprocessing Operating System", "file": "https://online.flippingbook.com/view/51954508/" },
-      { "id": "chapter3_3", "name": "Distributed Operating System", "file": "https://online.flippingbook.com/view/51844281/" },
-      { "id": "chapter3_4", "name": "Batch Operating System", "file": "https://online.flippingbook.com/view/51676253/" }
-    ]
+    id: "folder3",
+    title: "Networking Fundamentals and Basics",
+    subchapters: [
+      { id: "chapter3_1", name: "Operating System Introduction", file: newLinks[linkIndex++ % 4] },
+      { id: "chapter3_2", name: "Multiprocessing Operating System", file: newLinks[linkIndex++ % 4] },
+      { id: "chapter3_3", name: "Distributed Operating System", file: newLinks[linkIndex++ % 4] },
+      { id: "chapter3_4", name: "Batch Operating System", file: newLinks[linkIndex++ % 4] },
+    ],
   },
   {
-    "id": "folder4",
-    "title": "Process and Thread Management",
-    "subchapters": [
-      { "id": "chapter4_1", "name": "Operating System Introduction", "file": "https://online.flippingbook.com/view/52159364/" },
-      { "id": "chapter4_2", "name": "Multiprocessing Operating System", "file": "https://online.flippingbook.com/view/51954508/" },
-      { "id": "chapter4_3", "name": "Distributed Operating System", "file": "https://online.flippingbook.com/view/51844281/" },
-      { "id": "chapter4_4", "name": "Batch Operating System", "file": "https://online.flippingbook.com/view/51676253/" }
-    ]
+    id: "folder4",
+    title: "Network Protocols and Communication",
+    subchapters: [
+      { id: "chapter4_1", name: "Operating System Introduction", file: newLinks[linkIndex++ % 4] },
+      { id: "chapter4_2", name: "Multiprocessing Operating System", file: newLinks[linkIndex++ % 4] },
+      { id: "chapter4_3", name: "Distributed Operating System", file: newLinks[linkIndex++ % 4] },
+      { id: "chapter4_4", name: "Batch Operating System", file: newLinks[linkIndex++ % 4] },
+    ],
   },
   {
-    "id": "folder5",
-    "title": "Scheduling and Synchronization",
-    "subchapters": [
-      { "id": "chapter5_1", "name": "Operating System Introduction", "file": "https://online.flippingbook.com/view/52159364/" },
-      { "id": "chapter5_2", "name": "Multiprocessing Operating System", "file": "https://online.flippingbook.com/view/51954508/" },
-      { "id": "chapter5_3", "name": "Distributed Operating System", "file": "https://online.flippingbook.com/view/51844281/" },
-      { "id": "chapter5_4", "name": "Batch Operating System", "file": "https://online.flippingbook.com/view/51676253/" }
-    ]
+    id: "folder5",
+    title: "IP Addressing and Subnetting",
+    subchapters: [
+      { id: "chapter5_1", name: "Operating System Introduction", file: newLinks[linkIndex++ % 4] },
+      { id: "chapter5_2", name: "Multiprocessing Operating System", file: newLinks[linkIndex++ % 4] },
+      { id: "chapter5_3", name: "Distributed Operating System", file: newLinks[linkIndex++ % 4] },
+      { id: "chapter5_4", name: "Batch Operating System", file: newLinks[linkIndex++ % 4] },
+    ],
   },
   {
-    "id": "folder6",
-    "title": "File Systems and Storage Management",
-    "subchapters": [
-      { "id": "chapter6_1", "name": "Operating System Introduction", "file": "https://online.flippingbook.com/view/52159364/" },
-      { "id": "chapter6_2", "name": "Multiprocessing Operating System", "file": "https://online.flippingbook.com/view/51954508/" },
-      { "id": "chapter6_3", "name": "Distributed Operating System", "file": "https://online.flippingbook.com/view/51844281/" },
-      { "id": "chapter6_4", "name": "Batch Operating System", "file": "https://online.flippingbook.com/view/51676253/" }
-    ]
+    id: "folder6",
+    title: "Routing and Switching",
+    subchapters: [
+      { id: "chapter6_1", name: "Operating System Introduction", file: newLinks[linkIndex++ % 4] },
+      { id: "chapter6_2", name: "Multiprocessing Operating System", file: newLinks[linkIndex++ % 4] },
+      { id: "chapter6_3", name: "Distributed Operating System", file: newLinks[linkIndex++ % 4] },
+      { id: "chapter6_4", name: "Batch Operating System", file: newLinks[linkIndex++ % 4] },
+    ],
   },
   {
-    "id": "folder7",
-    "title": "Security and Protection in OS",
-    "subchapters": [
-      { "id": "chapter7_1", "name": "Operating System Introduction", "file": "https://online.flippingbook.com/view/52159364/" },
-      { "id": "chapter7_2", "name": "Multiprocessing Operating System", "file": "https://online.flippingbook.com/view/51954508/" },
-      { "id": "chapter7_3", "name": "Distributed Operating System", "file": "https://online.flippingbook.com/view/51844281/" },
-      { "id": "chapter7_4", "name": "Batch Operating System", "file": "https://online.flippingbook.com/view/51676253/" }
-    ]
+    id: "folder7",
+    title: "Network Technologies and Standards",
+    subchapters: [
+      { id: "chapter7_1", name: "Operating System Introduction", file: newLinks[linkIndex++ % 4] },
+      { id: "chapter7_2", name: "Multiprocessing Operating System", file: newLinks[linkIndex++ % 4] },
+      { id: "chapter7_3", name: "Distributed Operating System", file: newLinks[linkIndex++ % 4] },
+      { id: "chapter7_4", name: "Batch Operating System", file: newLinks[linkIndex++ % 4] },
+    ],
   },
   {
-    "id": "folder8",
-    "title": "Real-Time and Embedded OS",
-    "subchapters": [
-      { "id": "chapter8_1", "name": "Operating System Introduction", "file": "https://online.flippingbook.com/view/52159364/" },
-      { "id": "chapter8_2", "name": "Multiprocessing Operating System", "file": "https://online.flippingbook.com/view/51954508/" },
-      { "id": "chapter8_3", "name": "Distributed Operating System", "file": "https://online.flippingbook.com/view/51844281/" },
-      { "id": "chapter8_4", "name": "Batch Operating System", "file": "https://online.flippingbook.com/view/51676253/" }
-    ]
+    id: "folder8",
+    title: "Network Security",
+    subchapters: [
+      { id: "chapter8_1", name: "Operating System Introduction", file: newLinks[linkIndex++ % 4] },
+      { id: "chapter8_2", name: "Multiprocessing Operating System", file: newLinks[linkIndex++ % 4] },
+      { id: "chapter8_3", name: "Distributed Operating System", file: newLinks[linkIndex++ % 4] },
+      { id: "chapter8_4", name: "Batch Operating System", file: newLinks[linkIndex++ % 4] },
+    ],
   },
   {
-    "id": "folder9",
-    "title": "Virtualization and Cloud OS",
-    "subchapters": [
-      { "id": "chapter9_1", "name": "Operating System Introduction", "file": "https://online.flippingbook.com/view/52159364/" },
-      { "id": "chapter9_2", "name": "Multiprocessing Operating System", "file": "https://online.flippingbook.com/view/51954508/" },
-      { "id": "chapter9_3", "name": "Distributed Operating System", "file": "https://online.flippingbook.com/view/51844281/" },
-      { "id": "chapter9_4", "name": "Batch Operating System", "file": "https://online.flippingbook.com/view/51676253/" }
-    ]
+    id: "folder9",
+    title: "Network Management and Monitoring",
+    subchapters: [
+      { id: "chapter9_1", name: "Operating System Introduction", file: newLinks[linkIndex++ % 4] },
+      { id: "chapter9_2", name: "Multiprocessing Operating System", file: newLinks[linkIndex++ % 4] },
+      { id: "chapter9_3", name: "Distributed Operating System", file: newLinks[linkIndex++ % 4] },
+      { id: "chapter9_4", name: "Batch Operating System", file: newLinks[linkIndex++ % 4] },
+    ],
   },
   {
-    "id": "folder10",
-    "title": "Advanced OS Topics",
-    "subchapters": [
-      { "id": "chapter10_1", "name": "Operating System Introduction", "file": "https://online.flippingbook.com/view/52159364/" },
-      { "id": "chapter10_2", "name": "Multiprocessing Operating System", "file": "https://online.flippingbook.com/view/51954508/" },
-      { "id": "chapter10_3", "name": "Distributed Operating System", "file": "https://online.flippingbook.com/view/51844281/" },
-      { "id": "chapter10_4", "name": "Batch Operating System", "file": "https://online.flippingbook.com/view/51676253/" }
-    ]
-  }
+    id: "folder10",
+    title: "Advanced Networking Concepts",
+    subchapters: [
+      { id: "chapter10_1", name: "Operating System Introduction", file: newLinks[linkIndex++ % 4] },
+      { id: "chapter10_2", name: "Multiprocessing Operating System", file: newLinks[linkIndex++ % 4] },
+      { id: "chapter10_3", name: "Distributed Operating System", file: newLinks[linkIndex++ % 4] },
+      { id: "chapter10_4", name: "Batch Operating System", file: newLinks[linkIndex++ % 4] },
+    ],
+  },
 ];
+
+  
 
 
   useEffect(() => {
@@ -237,14 +248,15 @@ const folders = [
   };
 
   return (
-    <div className="flex flex-col h-screen bg-gray-900 text-white">
+    <div className="flex flex-col h-screen overflow-y-auto bg-gray-900 text-white">
       {/* Title and Description */}
       <div className="bg-gray-800 text-center p-8 shadow-lg z-10 relative">
-        <h1 className="text-4xl font-extrabold text-gray-100">
-          Operating System
-        </h1>
+      <AnimatedText 
+      text="Operating System" 
+      textClassName="text-[4rem] md:text-[6rem] font-bold"
+    />
         <p className="mt-4 text-xl text-gray-300">
-          Dive deep into fascinating topics with insightful explanations and examples.
+        For a technical interview in Operating Systems, it's crucial to have a solid understanding of OS fundamentals. This includes knowledge of process management, memory management, synchronization, file systems, and system calls, as well as familiarity with concepts like deadlock, scheduling, and virtualization.
         </p>
       </div>
 
